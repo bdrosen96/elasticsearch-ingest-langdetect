@@ -22,6 +22,7 @@ import org.elasticsearch.common.io.FileSystemUtils;
 import org.elasticsearch.xcontent.DeprecationHandler;
 import org.elasticsearch.xcontent.NamedXContentRegistry;
 import org.elasticsearch.xcontent.XContentType;
+import org.elasticsearch.xcontent.XContentFactory;
 import org.elasticsearch.env.Environment;
 
 import java.io.IOException;
