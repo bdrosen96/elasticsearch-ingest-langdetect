@@ -17,7 +17,7 @@ version = "${elasticsearchVersion}.1-SNAPSHOT"
 apply plugin: 'java'
 apply plugin: 'idea'
 
-sourceCompatibility = '17'
+sourceCompatibility = '11'
 
 task pluginDescriptor(type: Copy) {
   from('src/main/resources') {

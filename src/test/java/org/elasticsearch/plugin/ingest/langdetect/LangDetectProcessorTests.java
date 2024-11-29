@@ -101,7 +101,7 @@ public class LangDetectProcessorTests {
     private Map<String, Object> ingestDocument(Map<String, Object> config, String field, String value) throws Exception {
         Map<String, Object> document = new HashMap<>(1);
         document.put(field, value);
-        IngestDocument ingestDocument = new IngestDocument("my-index", "my-id", 1L, null,
+        IngestDocument ingestDocument = new IngestDocument("my-index", "my-type", "my-id", null, 1L,
                 VersionType.INTERNAL, document);
 
         Processor processor = new LangDetectProcessor.Factory()

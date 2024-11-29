@@ -79,19 +79,17 @@ public class LangDetectProcessorIntegrationTests {
 
     @Test
     public void testLangDetectProcessorInPipeline() throws Exception {
-        String putPipelineBody = """
-      {
-        "description": "_description",
-        "processors": [
-          {
-            "langdetect" : {
-              "field" : "field1",
-              "target_field" : "field1_language"
-            }
-          }
-        ]
-      }
-                """;
+        String putPipelineBody = "{\n" +
+          "\"description\": \"_description\",\n" + 
+        "\"processors\": [\n" + 
+          "{\n" +
+            "\"langdetect\" : {\n" +
+              "\"field\" : \"field1\",\n" +
+              "\"target_field\" : \"field1_language\"\n" +
+            "}\n" +
+          "}\n" +
+        "]\n" +
+      "}\n";
         HttpRequest request =  HttpRequest.newBuilder()
                 .PUT(HttpRequest.BodyPublishers.ofString(putPipelineBody))
                 .uri(URI.create("http://localhost:" + container.getMappedPort(9200) + "/_ingest/pipeline/my-pipeline"))
